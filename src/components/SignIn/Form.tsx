@@ -4,8 +4,10 @@ import arroba from "../../assets/arroba.svg";
 
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../actions/authActions";
+import { setSession } from "../../actions/sessionAction";
 interface LoginData {
   email: string;
   password: string;
@@ -14,7 +16,8 @@ interface LoginData {
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -29,7 +32,11 @@ const Form = () => {
         loginData
       );
       // Aquí puedes manejar la respuesta de la API, como guardar el token de autenticación en el estado global o redirigir al usuario a otra página.
+      navigate(`/Home`);
       console.log(response.data);
+      const token = response.data.token;
+      dispatch(setToken(token));
+      dispatch(setSession(true));
     } catch (error) {
       console.log(error);
     }

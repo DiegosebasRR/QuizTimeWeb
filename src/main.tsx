@@ -6,7 +6,9 @@ import SignIn from "./components/SignIn/SignIn.tsx";
 import ErrorPage from "./components/global/ErrorPage/ErrorPage.tsx";
 import SignUp from "./components/SignUp/SignUp.tsx";
 import Home from "./components/Home/Home.tsx";
-
+import ProtectedRoutes from "./router/ProtectedRoutes.tsx";
+import { Provider } from "react-redux";
+import store from "./store.ts";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,13 +20,20 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
-    path: "/Home",
-    element: <Home />,
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: "/Home",
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
