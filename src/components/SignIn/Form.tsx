@@ -1,7 +1,40 @@
 import Button from "../global/Button/Button";
-import Input from "../global/Imput/Input";
 import styles from "./Form.module.css";
+import arroba from "../../assets/arroba.svg";
+
+import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+interface LoginData {
+  email: string;
+  password: string;
+}
+
 const Form = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const loginData: LoginData = {
+        email,
+        password,
+      };
+
+      const response = await axios.post(
+        "http://localhost:3002/auth/login",
+        loginData
+      );
+      // Aquí puedes manejar la respuesta de la API, como guardar el token de autenticación en el estado global o redirigir al usuario a otra página.
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.containerForm}>
@@ -9,18 +42,40 @@ const Form = () => {
         <p className={styles.description}>
           It's not long before you embark on this journey!
         </p>
-        <form className={styles.form}>
-          <Input label="E-mail" placeholder="name@email.com" />
-          <Input
-            label="Password"
-            placeholder="8+ Characters, 1 Capital letter"
-          />
-
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label className={styles.labelForm}>
+            E-mail
+            <div className={styles.containerInputIcon}>
+              <input
+                className={styles.input}
+                placeholder="name@email.com"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <img className={styles.icon} src={arroba} alt="arroba" />
+            </div>
+          </label>
+          <label className={styles.labelForm}>
+            Password
+            <div className={styles.containerInputIcon}>
+              <input
+                className={styles.input}
+                placeholder="8+ Characters, 1 Capital letter"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <img className={styles.icon} src={arroba} alt="arroba" />
+            </div>
+          </label>
           <Button />
         </form>
         <h2 className={styles.text}>
           You do not have an account?{" "}
-          <span className={styles.span}>Sign up</span>
+          <span className={styles.span}>
+            <Link to={`/SignUp`}>Sign Up</Link>
+          </span>
         </h2>
       </div>
     </div>

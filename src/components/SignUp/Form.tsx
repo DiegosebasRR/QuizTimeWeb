@@ -1,11 +1,12 @@
 import Button from "../global/Button/Button";
 import Input from "../global/Imput/Input";
 import styles from "./Form.module.css";
+import { Link } from "react-router-dom";
 const Form = () => {
   return (
     <div className={styles.container}>
       <div className={styles.containerForm}>
-        <h1 className={styles.title}>Sign Un</h1>
+        <h1 className={styles.title}>Sign Up</h1>
         <p className={styles.description}>
           It's not long before you embark on this journey!
         </p>
@@ -24,7 +25,9 @@ const Form = () => {
         </form>
         <h2 className={styles.text}>
           You do not have an account?{" "}
-          <span className={styles.span}>Sign up</span>
+          <span className={styles.span}>
+            <Link to={`/`}>Sign In</Link>
+          </span>
         </h2>
       </div>
     </div>

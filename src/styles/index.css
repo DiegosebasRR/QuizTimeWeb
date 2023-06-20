@@ -27,6 +27,9 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins";
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
 }
 h1 {
   font-family: "Poppins-Bold";

@@ -2,9 +2,11 @@ import RightPartSign from "../global/RightPartSign/RightPartSign";
 import Form from "./Form";
 import styles from "./SignIn.module.css";
 const SignIn = () => {
+
+
   return (
     <div className={styles.container}>
-      <Form />
+      <Form/>
       <RightPartSign />
     </div>
   );

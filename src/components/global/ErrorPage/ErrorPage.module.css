@@ -1,0 +1,9 @@
+.errorContainer {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #44cfee, #1e94e9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
