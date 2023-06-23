@@ -76,7 +76,7 @@ const Form = () => {
               <img className={styles.icon} src={arroba} alt="arroba" />
             </div>
           </label>
-          <Button />
+          <Button text="Sign In" background={true} />
         </form>
         <h2 className={styles.text}>
           You do not have an account?{" "}
