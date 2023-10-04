@@ -1,28 +1,22 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../reducers";
-import { useDispatch } from "react-redux";
-import { clearToken } from "../../actions/authActions";
-import { useNavigate } from "react-router-dom";
-import { setSession } from "../../actions/sessionAction";
-import SideBar from "../SideBar/SideBar";
-const Home = () => {
-  const token = useSelector((state: RootState) => state.auth.token);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    // Lógica de cierre de sesión
+// import { useSelector } from "react-redux";
+// import { RootState } from "../../reducers";
+//const token = useSelector((state: RootState) => state.auth.token);
+import { Outlet } from "react-router-dom";
 
-    // Limpiar el token en el store de Redux
-    dispatch(clearToken());
-    dispatch(setSession(false));
-    navigate("/");
-  };
+import SideBar from "../SideBar/SideBar";
+import Nav from "../Nav/Nav";
+import styles from "./Home.module.css";
+
+const Home = () => {
   return (
-    <div>
-      <SideBar />
-      <h1>Homae</h1>
-      <h2>{token}</h2>
-      <button onClick={handleLogout}>Logout</button>
+    <div className={styles.home}>
+      <Nav />
+      <div className={styles.contentContainer}>
+        <SideBar />
+        <div className={styles.container}>
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };

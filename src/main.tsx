@@ -9,6 +9,10 @@ import Home from "./components/Home/Home.tsx";
 import ProtectedRoutes from "./router/ProtectedRoutes.tsx";
 import { Provider } from "react-redux";
 import store from "./store.ts";
+import Dashboard from "./components/Dashboard/Dashboard.tsx";
+import History from "./components/History/History.tsx";
+import Profile from "./components/Profile/Profile.tsx";
+import CreateQuestionnaire from "./components/CreateQuestionnaire/CreateQuestionnaire.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +29,24 @@ const router = createBrowserRouter([
       {
         path: "/Home",
         element: <Home />,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: "History",
+            element: <History />,
+          },
+          {
+            path: "Profile",
+            element: <Profile />,
+          },
+        ],
+      },
+      {
+        path: "/create",
+        element: <CreateQuestionnaire />,
       },
     ],
   },

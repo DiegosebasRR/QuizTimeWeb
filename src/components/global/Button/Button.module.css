@@ -2,10 +2,15 @@
   width: 420px;
   height: 80px;
   border-radius: 25px;
-
   font-size: 30px;
+  margin-right: 10px;
 }
 .background {
   background: linear-gradient(to right, #44cfee, #1e94e9);
   color: white;
+}
+.icon {
+  font-size: 25px;
+  margin-right: 15px;
+  color: #44cfee;
 }

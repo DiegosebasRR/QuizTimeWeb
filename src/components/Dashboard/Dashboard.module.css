@@ -1,0 +1,88 @@
+.userContainer {
+  display: flex; /* Para alinear elementos en línea */
+  align-items: center;
+}
+
+.userImage {
+  width: 145px;
+  height: 145px;
+  border-radius: 30px;
+  margin-left: 50px;
+}
+
+/* Estilos para el contenedor de información del usuario */
+.userInfo {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+}
+
+.userStats {
+  display: flex;
+  gap: 50px; /* Espacio entre los elementos internos */
+}
+
+.userName {
+  font-size: 33px;
+}
+
+.number {
+  font-size: 29px;
+  font-weight: 900;
+}
+
+.description {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 29px;
+}
+.statContainer {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.iconContainer {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(249, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(116, 114, 114, 0.3),
+    0px 0px 8px rgba(116, 115, 115, 0.2), 0px 0px 15px rgba(216, 216, 216, 0.1); /* Agrega las sombras con diferentes radios de difuminado */
+}
+
+.statInfo {
+  margin-left: 10px; /* Espacio entre el ícono y la información */
+}
+
+.questionaire {
+  margin-top: 20px;
+}
+.questionaires {
+  margin-top: 10px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.questionaires::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.questionaires::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Color del thumb del scrollbar */
+  border-radius: 4px; /* Borde redondeado del thumb */
+}
+
+.questionaires::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Color del thumb al pasar el cursor */
+}

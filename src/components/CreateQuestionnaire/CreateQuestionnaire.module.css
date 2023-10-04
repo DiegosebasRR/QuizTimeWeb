@@ -1,0 +1,21 @@
+.container {
+  height: 100vh;
+  background: linear-gradient(to right, #44cfee, #1e94e9);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px 0px 50px;
+}
+
+.sidePanel {
+  margin-top: 50px;
+  height: 740px;
+  width: 15%;
+  background-color: rgb(255, 255, 255);
+}
+
+.mainPanel {
+  margin-top: 50px;
+  height: 740px;
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+}

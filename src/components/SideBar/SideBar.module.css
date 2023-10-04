@@ -1,0 +1,11 @@
+.sidebar {
+  width: 430px;
+  left: 0;
+  top: 0;
+  height: 780px;
+  padding: 20px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

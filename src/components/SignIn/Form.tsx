@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../../actions/authActions";
 import { setSession } from "../../actions/sessionAction";
+import { setUser } from "../../actions/userActions";
 interface LoginData {
   email: string;
   password: string;
@@ -35,6 +36,8 @@ const Form = () => {
       navigate(`/Home`);
       console.log(response.data);
       const token = response.data.token;
+      const user = response.data.user;
+      dispatch(setUser(user));
       dispatch(setToken(token));
       dispatch(setSession(true));
     } catch (error) {

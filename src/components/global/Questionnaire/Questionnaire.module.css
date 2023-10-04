@@ -1,0 +1,50 @@
+.questionnaireContainer {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-right: 45px;
+  position: relative;
+}
+
+.image {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 0 80px 0 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Permite que el bloque de detalles crezca */
+}
+
+.details {
+  color: #333;
+}
+
+.date {
+  font-size: 20px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 20px;
+  margin: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
